@@ -1,0 +1,106 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2021-06-12T13:38:26.484061-04:00",
+            "magic": "94a8d332c6d4d6a70fc7157286c64b1cac704d59c1ae8de7335dde07862fe21b",
+            "version": "v3.4.0"
+        },
+        "secrets_providers": {
+            "type": "service",
+            "state": {
+                "url": "https://api.pulumi.com",
+                "owner": "werbitt",
+                "project": "vm",
+                "stack": "dev"
+            }
+        },
+        "resources": [
+            {
+                "urn": "urn:pulumi:dev::vm::pulumi:pulumi:Stack::vm-dev",
+                "custom": false,
+                "type": "pulumi:pulumi:Stack"
+            },
+            {
+                "urn": "urn:pulumi:dev::vm::pulumi:providers:azure-native::default_1_11_0",
+                "custom": true,
+                "id": "8f833a86-22b8-49dc-9bff-c032a5865f61",
+                "type": "pulumi:providers:azure-native",
+                "inputs": {
+                    "location": "eastus",
+                    "version": "1.11.0"
+                },
+                "outputs": {
+                    "location": "eastus",
+                    "version": "1.11.0"
+                }
+            },
+            {
+                "urn": "urn:pulumi:dev::vm::azure-native:resources:ResourceGroup::resourceGroup",
+                "custom": true,
+                "id": "/subscriptions/9bdb2d56-7bd4-46bd-9c6a-d6abe8adf3ac/resourceGroups/resourceGroup161199f6",
+                "type": "azure-native:resources:ResourceGroup",
+                "inputs": {
+                    "__createBeforeDelete": true,
+                    "location": "eastus",
+                    "resourceGroupName": "resourceGroup161199f6"
+                },
+                "outputs": {
+                    "__inputs": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "AAABALA28Qnd0EFPIere5SJ/khMAAEQ+Cf05gW0pT92fGmLeVIpwbcDcDohrQR5L+S90F0zt/7vqi9tKZD9ldy7oDEDaQPtRM66gKFyorwQLISTDMvQnBWkh7XSZ+JndHJu95Cvyk5oH6bI4mAukSmCAaDzIeon3rDBrJpE="
+                    },
+                    "id": "/subscriptions/9bdb2d56-7bd4-46bd-9c6a-d6abe8adf3ac/resourceGroups/resourceGroup161199f6",
+                    "location": "eastus",
+                    "name": "resourceGroup161199f6",
+                    "properties": {
+                        "provisioningState": "Succeeded"
+                    },
+                    "type": "Microsoft.Resources/resourceGroups"
+                },
+                "parent": "urn:pulumi:dev::vm::pulumi:pulumi:Stack::vm-dev",
+                "provider": "urn:pulumi:dev::vm::pulumi:providers:azure-native::default_1_11_0::8f833a86-22b8-49dc-9bff-c032a5865f61",
+                "aliases": [
+                    "urn:pulumi:dev::vm::azure-nextgen:resources:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20151101:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20151101:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20160201:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20160201:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20160701:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20160701:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20160901:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20160901:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20170510:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20170510:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20180201:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20180201:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20180501:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20180501:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20190301:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20190301:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20190501:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20190501:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20190510:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20190510:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20190701:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20190701:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20190801:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20190801:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20191001:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20191001:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20200601:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20200601:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20200801:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20200801:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20201001:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20201001:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20210101:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20210101:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-native:resources/v20210401:ResourceGroup::resourceGroup",
+                    "urn:pulumi:dev::vm::azure-nextgen:resources/v20210401:ResourceGroup::resourceGroup"
+                ]
+            }
+        ],
+        "pending_operations": []
+    }
+}

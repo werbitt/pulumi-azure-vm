@@ -1,0 +1,5 @@
+config:
+  azure-native:location: eastus
+  vm:password:
+    secure: AAABAJRA/gZ4iAmgxgYC2BxNE2nn30WW4ZP6Dues+BISCPOsW+EIH2hzbng=
+  vm:username: micah

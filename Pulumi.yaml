@@ -1,0 +1,3 @@
+name: vm
+runtime: nodejs
+description: A vm to bdo the Solana Helloworld tutorial
