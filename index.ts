@@ -12,20 +12,6 @@ const password = config.requireSecret("password");
 // Create an Azure Resource Group
 const resourceGroup = new resources.ResourceGroup("resourceGroup");
 
-// Create an Azure resource (Storage Account)
-// const storageAccount = new storage.StorageAccount("sa", {
-//     resourceGroupName: resourceGroup.name,
-//     sku: {
-//         name: storage.SkuName.Standard_LRS,
-//     },
-//     kind: storage.Kind.StorageV2,
-// });
-
-// Export the primary key of the Storage Account
-// const storageAccountKeys = pulumi.all([resourceGroup.name, storageAccount.name]).apply(([resourceGroupName, accountName]) =>
-//     storage.listStorageAccountKeys({ resourceGroupName, accountName }));
-// export const primaryStorageKey = storageAccountKeys.keys[0].value;
-
 // Create a network and subnet
 const virtualNetwork = new network.VirtualNetwork("network", {
   resourceGroupName: resourceGroup.name,
@@ -37,12 +23,6 @@ const virtualNetwork = new network.VirtualNetwork("network", {
     }
   ]
 });
-
-// const subnet = new network.Subnet("subnet", {
-//   resourceGroupName: resourceGroup.name,
-//   virtualNetworkName: virtualNetwork.name,
-//   addressPrefixes: ["10.0.2.0/24"],
-// });
 
 // Allocate a public IP and assign to NIC
 const publicIp = new network.PublicIPAddress("ip", {
