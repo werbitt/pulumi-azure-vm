@@ -3,6 +3,7 @@ import * as resources from "@pulumi/azure-native/resources";
 //import * as storage from "@pulumi/azure-native/storage";
 import * as compute from "@pulumi/azure-native/compute"
 import * as network from "@pulumi/azure-native/network"
+import { Output } from "@pulumi/pulumi";
 
 // Get the username and password for the vm from the pulumi config
 const config = new pulumi.Config();
@@ -30,11 +31,23 @@ const publicIp = new network.PublicIPAddress("ip", {
   publicIPAllocationMethod: network.IPAllocationMethod.Dynamic,
 });
 
+let foo: Output<string> = virtualNetwork.subnets.apply( s => {
+  if (s) {
+    if (s[0].id) {
+      return s[0].id
+    } else {
+      return "foo"
+    } 
+  } else {
+    return "foo"
+  }
+});
+
 const networkInterface = new network.NetworkInterface("nic", {
   resourceGroupName: resourceGroup.name,
   ipConfigurations: [{
     name: "ipcfg",
-    subnet: { id: virtualNetwork.subnets[0].id },
+    subnet: { id: foo },
     privateIPAllocationMethod: network.IPAllocationMethod.Dynamic,
     publicIPAddress: { id: publicIp.id },
   }],
@@ -50,7 +63,7 @@ const vm = new compute.VirtualMachine("vm", {
     networkInterfaces: [{ id: networkInterface.id }],
   },
   hardwareProfile: {
-    vmSize: compute.VirtualMachineSizeTypes.Standard_A0,
+    vmSize: compute.VirtualMachineSizeTypes.Standard_D2s_v3
   },
   osProfile: {
     computerName: "mercury",
